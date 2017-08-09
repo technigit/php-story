@@ -8,7 +8,10 @@ include_once('classes/Orderus.php');
 include_once('classes/Beast.php');
 
 $ui = new UI();
+$ui->open();
+
 $narration = new Narration();
+
 $game = new Game($ui, $narration);
 
 $ui->display($narration->start());
@@ -31,3 +34,5 @@ if ($game->winner->is_orderus) {
 } else {
     $ui->display($narration->draw());
 }
+
+$ui->close();
