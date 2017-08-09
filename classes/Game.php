@@ -18,22 +18,20 @@ class Game
 
     public function display_stats()
     {
-        $this->ui->display("--");
         $this->display_individual_stats($this->orderus);
         $this->display_individual_stats($this->beast);
-        $this->ui->display("--");
     }
 
     private function display_individual_stats($player)
     {
-        $this->ui->display([
-         "$player->name:",
-         "  Health: " . $player->health,
-         "  Strength: " . $player->strength,
-         "  Defense: " . $player->defense,
-         "  Speed: " . $player->speed,
-         "  Luck: " . $player->luck,
-        ]);
+        $changes = $player->stat_changes();
+        if (count($changes) > 0) {
+            $this->ui->display("| $player->name:");
+            foreach ($changes as $change) {
+                $this->ui->display("|   " . $change->type . ": " . $change->value);
+            }
+        }
+        $player->save_stats();
     }
 
     public function play_round()

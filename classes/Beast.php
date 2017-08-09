@@ -1,36 +1,30 @@
 <?php
 
-class Beast
+class Beast extends Player
 {
     public $name = "Beast";
 
-    private $beast_health_min = 60;
-    private $beast_health_max = 90;
+    private $health_min = 60;
+    private $health_max = 90;
 
-    private $beast_strength_min = 60;
-    private $beast_strength_max = 90;
+    private $strength_min = 60;
+    private $strength_max = 90;
 
-    private $beast_defense_min = 40;
-    private $beast_defense_max = 60;
+    private $defense_min = 40;
+    private $defense_max = 60;
 
-    private $beast_speed_min = 40;
-    private $beast_speed_max = 60;
+    private $speed_min = 40;
+    private $speed_max = 60;
 
-    private $beast_luck_min = 25;
-    private $beast_luck_max = 40;
-
-    private $beast_health_last = 0;
-    private $beast_strength_last = 0;
-    private $beast_defense_last = 0;
-    private $beast_speed_last = 0;
-    private $beast_luck_last = 0;
+    private $luck_min = 25;
+    private $luck_max = 40;
 
     public function __construct()
     {
-        $this->health = rand($this->beast_health_min, $this->beast_health_max);
-        $this->strength = rand($this->beast_strength_min, $this->beast_strength_max);
-        $this->defense = rand($this->beast_defense_min, $this->beast_defense_max);
-        $this->speed = rand($this->beast_speed_min, $this->beast_speed_max);
-        $this->luck = rand($this->beast_luck_min, $this->beast_luck_max);
+        $this->health = rand($this->health_min, $this->health_max);
+        $this->strength = rand($this->strength_min, $this->strength_max);
+        $this->defense = rand($this->defense_min, $this->defense_max);
+        $this->speed = rand($this->speed_min, $this->speed_max);
+        $this->luck = rand($this->luck_min, $this->luck_max);
     }
 }

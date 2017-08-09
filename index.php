@@ -3,6 +3,7 @@
 include_once('classes/UI.php');
 include_once('classes/Game.php');
 include_once('classes/Narration.php');
+include_once('classes/Player.php');
 include_once('classes/Orderus.php');
 include_once('classes/Beast.php');
 
