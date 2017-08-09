@@ -75,32 +75,24 @@ Class Player
         return $this->health;
     }
 
-    public function strength()
-    {
-        return $this->health;
-    }
-
-    public function defense()
-    {
-        return $this->defense;
-    }
-
     public function speed()
     {
         return $this->speed;
     }
 
-    public function luck()
-    {
-        return $this->luck;
-    }
-
     public function attack($defender)
     {
-        $damage = $this->strength - $defender->defense;
-        $defender->health -= $damage;
-        if ($defender->health < 0) {
-            $defender->health = 0;  // it just makes more sense
+        $chance = rand(0, 100);
+        if ($chance < $this->luck) {
+            $damage = $this->strength - $defender->defense;
+            $defender->health -= $damage;
+            if ($defender->health < 0) {
+                $defender->health = 0;  // it just makes more sense
+            }
+            $success = true;
+        } else {
+            $success = false;
         }
+        return $success;
     }
 }

@@ -59,10 +59,18 @@ class Game
 
         if ($this->orderus_attacks) {
             $this->ui->display($this->narration->orderus_attacks());
-            $this->orderus->attack($this->beast);
+            if ($this->orderus->attack($this->beast)) {
+                $this->ui->display($this->narration->orderus_hits());
+            } else {
+                $this->ui->display($this->narration->orderus_misses());
+            }
         } else {
             $this->ui->display($this->narration->beast_attacks());
-            $this->beast->attack($this->orderus);
+            if ($this->beast->attack($this->orderus)) {
+                $this->ui->display($this->narration->beast_hits());
+            } else {
+                $this->ui->display($this->narration->beast_misses());
+            }
         }
         $this->orderus_attacks = !$this->orderus_attacks;
 

@@ -57,6 +57,26 @@ class Narration
         return $this->pick_narration($this->beast_attacks_narrations);
     }
 
+    public function orderus_hits()
+    {
+        return $this->pick_narration($this->orderus_hits_narrations);
+    }
+
+    public function orderus_misses()
+    {
+        return $this->pick_narration($this->orderus_misses_narrations);
+    }
+
+    public function beast_hits()
+    {
+        return $this->pick_narration($this->beast_hits_narrations);
+    }
+
+    public function beast_misses()
+    {
+        return $this->pick_narration($this->beast_misses_narrations);
+    }
+
     public function won()
     {
         return $this->pick_narration($this->won_narrations);
@@ -128,6 +148,22 @@ class Narration
         "The mighty blade of Orderus swoops at the beast.",
         "With calm determination, Orderus lunges forward...",
         "With a spectacular mid-air flip, Orderus swooshes his blade upon the beast."
+    );
+
+    private $orderus_hits_narrations = array(
+        "Orderus hits the wild beast!"
+    );
+
+    private $orderus_misses_narrations = array(
+        "Orderus misses!"
+    );
+
+    private $beast_hits_narrations = array(
+        "The wild beast hits Orderus!"
+    );
+
+    private $beast_misses_narrations = array(
+        "The wild beast misses!"
     );
 
     private $beast_attacks_narrations = array(
