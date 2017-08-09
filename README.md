@@ -1,13 +1,14 @@
 Sources:
-   https://github.com/jfern01/php-rpg-challenge
-   https://github.com/freelancerwebro/php-story
+
+- https://github.com/jfern01/php-rpg-challenge
+- https://github.com/freelancerwebro/php-story
 
 The story
 =====================
 
 Once upon a time there was a great hero, called Orderus, with some strengths and weaknesses, as all heroes have. After battling all kinds of monsters for more than a hundred years, Orderus now has the following stats:
 
--	Health: 70 - 100 	
+- Health: 70 - 100 	
 - Strength: 70 - 80
 - Defence: 45 – 55
 - Speed: 40 – 50
