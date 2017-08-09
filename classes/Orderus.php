@@ -28,7 +28,7 @@ class Orderus extends Player
         $this->luck = rand($this->luck_min, $this->luck_max);
     }
 
-    public function rapid_strike()
+    public function rapidStrike()
     {
         $attacks = 1;
         if (rand(0, 100) <= 10) {
@@ -37,7 +37,7 @@ class Orderus extends Player
         return $attacks;
     }
 
-    public function magic_shield()
+    public function magicShield()
     {
         $magic_shield = 1;
         if (rand(0, 100) <= 20) {

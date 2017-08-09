@@ -12,16 +12,16 @@ $narration = new Narration();
 $game = new Game($ui, $narration);
 
 $ui->display($narration->start());
-$game->display_stats();
-$ui->display_blank();
+$game->displayStats();
+$ui->displayBlank();
 
 while ($game->is_running) {
     $ui->display($narration->round());
-    $ui->display_blank();
+    $ui->displayBlank();
 
-    $game->play_round();
-    $game->display_stats();
-    $ui->display_blank();
+    $game->playRound();
+    $game->displayStats();
+    $ui->displayBlank();
 }
 
 if ($game->winner->is_orderus) {

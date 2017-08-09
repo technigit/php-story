@@ -25,7 +25,7 @@ Class Player
     private $speed_last = 0;
     private $luck_last = 0;
 
-    public function stat_changes()
+    public function statChanges()
     {
         $stat_changes = array();
         if ($this->health != $this->health_last) {
@@ -61,7 +61,7 @@ Class Player
         return $stat_changes;
     }
 
-    public function save_stats()
+    public function saveStats()
     {
         $this->health_last = $this->health;
         $this->strength_last = $this->strength;
@@ -78,6 +78,11 @@ Class Player
     public function speed()
     {
         return $this->speed;
+    }
+
+    public function luck()
+    {
+        return $this->luck;
     }
 
     public function attack($defender, $damage_divider = 1)

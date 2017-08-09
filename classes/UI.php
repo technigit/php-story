@@ -13,7 +13,7 @@ class UI
         }
     }
 
-    public function display_blank()
+    public function displayBlank()
     {
         $this->display("");
     }

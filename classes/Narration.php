@@ -2,7 +2,7 @@
 
 class Narration
 {
-    public function pick_narration($narrations)
+    public function pickNarration($narrations)
     {
         if (count($narrations) == 1) {
             return $narrations[0];
@@ -15,91 +15,91 @@ class Narration
 
     public function start()
     {
-        return $this->pick_narration($this->start_narrations);
+        return $this->pickNarration($this->start_narrations);
     }
 
     public function round()
     {
         if (!$this->round_narrated) {
             $this->round_narrated = true;
-            return $this->pick_narration($this->round_narration_start);
+            return $this->pickNarration($this->round_narration_start);
         }
-        return $this->pick_narration($this->round_narrations);
+        return $this->pickNarration($this->round_narrations);
     }
 
-    public function orderus_first_attack_speed()
+    public function orderusFirstAttackSpeed()
     {
-        return $this->pick_narration($this->orderus_first_attack_speed_narrations);
+        return $this->pickNarration($this->orderus_first_attack_speed_narrations);
     }
 
-    public function orderus_first_attack_luck()
+    public function orderusFirstAttackLuck()
     {
-        return $this->pick_narration($this->orderus_first_attack_luck_narrations);
+        return $this->pickNarration($this->orderus_first_attack_luck_narrations);
     }
 
-    public function beast_first_attack_speed()
+    public function beastFirstAttackSpeed()
     {
-        return $this->pick_narration($this->beast_first_attack_speed_narrations);
+        return $this->pickNarration($this->beast_first_attack_speed_narrations);
     }
 
-    public function beast_first_attack_luck()
+    public function beastFirstAttackLuck()
     {
-        return $this->pick_narration($this->beast_first_attack_luck_narrations);
+        return $this->pickNarration($this->beast_first_attack_luck_narrations);
     }
 
-    public function orderus_rapid_strike()
+    public function orderusRapidStrike()
     {
-        return $this->pick_narration($this->orderus_rapid_strike_narrations);
+        return $this->pickNarration($this->orderus_rapid_strike_narrations);
     }
 
-    public function orderus_magic_shield()
+    public function orderusMagicShield()
     {
-        return $this->pick_narration($this->orderus_magic_shield_narrations);
+        return $this->pickNarration($this->orderus_magic_shield_narrations);
     }
 
-    public function orderus_attacks()
+    public function orderusAttacks()
     {
-        return $this->pick_narration($this->orderus_attacks_narrations);
+        return $this->pickNarration($this->orderus_attacks_narrations);
     }
 
-    public function beast_attacks()
+    public function beastAttacks()
     {
-        return $this->pick_narration($this->beast_attacks_narrations);
+        return $this->pickNarration($this->beast_attacks_narrations);
     }
 
-    public function orderus_hits()
+    public function orderusHits()
     {
-        return $this->pick_narration($this->orderus_hits_narrations);
+        return $this->pickNarration($this->orderus_hits_narrations);
     }
 
-    public function orderus_misses()
+    public function orderusMisses()
     {
-        return $this->pick_narration($this->orderus_misses_narrations);
+        return $this->pickNarration($this->orderus_misses_narrations);
     }
 
-    public function beast_hits()
+    public function beastHits()
     {
-        return $this->pick_narration($this->beast_hits_narrations);
+        return $this->pickNarration($this->beast_hits_narrations);
     }
 
-    public function beast_misses()
+    public function beastMisses()
     {
-        return $this->pick_narration($this->beast_misses_narrations);
+        return $this->pickNarration($this->beast_misses_narrations);
     }
 
     public function won()
     {
-        return $this->pick_narration($this->won_narrations);
+        return $this->pickNarration($this->won_narrations);
     }
 
     public function lost()
     {
-        return $this->pick_narration($this->lost_narrations);
+        return $this->pickNarration($this->lost_narrations);
     }
 
     public function draw()
     {
-        return $this->pick_narration($this->draw_narrations);
+        return $this->pickNarration($this->draw_narrations);
     }
 
     // gameplay utterances are inscribed below.
