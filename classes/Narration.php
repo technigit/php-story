@@ -47,6 +47,16 @@ class Narration
         return $this->pick_narration($this->beast_first_attack_luck_narrations);
     }
 
+    public function orderus_rapid_strike()
+    {
+        return $this->pick_narration($this->orderus_rapid_strike_narrations);
+    }
+
+    public function orderus_magic_shield()
+    {
+        return $this->pick_narration($this->orderus_magic_shield_narrations);
+    }
+
     public function orderus_attacks()
     {
         return $this->pick_narration($this->orderus_attacks_narrations);
@@ -138,6 +148,14 @@ class Narration
 
     private $beast_first_attack_luck_narrations = array(
         "Beast is luckier.  It attacks first!"
+    );
+
+    private $orderus_rapid_strike_narrations = array(
+        "RAPID STRIKE!"
+    );
+
+    private $orderus_magic_shield_narrations = array(
+        "Orderus deflects the attack with his MAGIC SHIELD!"
     );
 
     private $orderus_attacks_narrations = array(

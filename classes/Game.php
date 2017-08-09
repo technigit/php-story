@@ -2,7 +2,7 @@
 
 class Game
 {
-    private $turns = 50; // temporary for initial commit
+    private $turns = 20; // prevent endless battles
 
     public $is_running = true;
     private $first_attack = true;
@@ -58,15 +58,33 @@ class Game
         }
 
         if ($this->orderus_attacks) {
-            $this->ui->display($this->narration->orderus_attacks());
-            if ($this->orderus->attack($this->beast)) {
-                $this->ui->display($this->narration->orderus_hits());
-            } else {
-                $this->ui->display($this->narration->orderus_misses());
+            $attacks = $this->orderus->rapid_strike();
+            if ($attacks > 1) {
+                $this->ui->display($this->narration->orderus_rapid_strike());
+                $this->ui->display_blank();
+            }
+            while ($attacks > 0) {
+                $this->ui->display($this->narration->orderus_attacks());
+                if ($this->orderus->attack($this->beast)) {
+                    $this->ui->display($this->narration->orderus_hits());
+                } else {
+                    $this->ui->display($this->narration->orderus_misses());
+                }
+                $attacks--;
+                if ($attacks > 0) {
+                    $this->display_stats();
+                    $this->ui->display_blank();
+                }
             }
         } else {
             $this->ui->display($this->narration->beast_attacks());
-            if ($this->beast->attack($this->orderus)) {
+            $damage_divider = $this->orderus->magic_shield();
+            if ($damage_divider > 1) {
+                $this->ui->display_blank();
+                $this->ui->display($this->narration->orderus_magic_shield());
+                $this->ui->display_blank();
+            }
+            if ($this->beast->attack($this->orderus, $damage_divider)) {
                 $this->ui->display($this->narration->beast_hits());
             } else {
                 $this->ui->display($this->narration->beast_misses());
@@ -74,7 +92,7 @@ class Game
         }
         $this->orderus_attacks = !$this->orderus_attacks;
 
-        // temporary for initial commit
+        // prevent endless battles
         $this->turns--;
         $this->is_running = ($this->turns > 0);
 

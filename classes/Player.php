@@ -80,11 +80,11 @@ Class Player
         return $this->speed;
     }
 
-    public function attack($defender)
+    public function attack($defender, $damage_divider = 1)
     {
         $chance = rand(0, 100);
         if ($chance < $this->luck) {
-            $damage = $this->strength - $defender->defense;
+            $damage = ($this->strength - $defender->defense) / $damage_divider;
             $defender->health -= $damage;
             if ($defender->health < 0) {
                 $defender->health = 0;  // it just makes more sense

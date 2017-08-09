@@ -27,4 +27,22 @@ class Orderus extends Player
         $this->speed = rand($this->speed_min, $this->speed_max);
         $this->luck = rand($this->luck_min, $this->luck_max);
     }
+
+    public function rapid_strike()
+    {
+        $attacks = 1;
+        if (rand(0, 100) <= 10) {
+            $attacks = 2;
+        }
+        return $attacks;
+    }
+
+    public function magic_shield()
+    {
+        $magic_shield = 1;
+        if (rand(0, 100) <= 20) {
+            $magic_shield = 2;
+        }
+        return $magic_shield;
+    }
 }
