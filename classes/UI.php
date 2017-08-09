@@ -12,4 +12,9 @@ class UI
             echo "$content\n";
         }
     }
+
+    public function display_blank()
+    {
+        $this->display("");
+    }
 }

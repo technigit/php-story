@@ -27,6 +27,36 @@ class Narration
         return $this->pick_narration($this->round_narrations);
     }
 
+    public function orderus_first_attack_speed()
+    {
+        return $this->pick_narration($this->orderus_first_attack_speed_narrations);
+    }
+
+    public function orderus_first_attack_luck()
+    {
+        return $this->pick_narration($this->orderus_first_attack_luck_narrations);
+    }
+
+    public function beast_first_attack_speed()
+    {
+        return $this->pick_narration($this->beast_first_attack_speed_narrations);
+    }
+
+    public function beast_first_attack_luck()
+    {
+        return $this->pick_narration($this->beast_first_attack_luck_narrations);
+    }
+
+    public function orderus_attacks()
+    {
+        return $this->pick_narration($this->orderus_attacks_narrations);
+    }
+
+    public function beast_attacks()
+    {
+        return $this->pick_narration($this->beast_attacks_narrations);
+    }
+
     public function won()
     {
         return $this->pick_narration($this->won_narrations);
@@ -68,8 +98,45 @@ class Narration
         "Another skirmish ensues.",
         "They go at it again.",
         "Once again, they fight!",
+        "With equal determination, hero and foe glare upon each other.",
+        "The two circle each other, slowly stepping side to side, as they watch for an opening.",
         "The battle continues.",
         "They clash...",
+    );
+
+    private $orderus_first_attack_speed_narrations = array(
+        "Orderus is faster.  He attacks first!"
+    );
+
+    private $beast_first_attack_speed_narrations = array(
+        "Beast is faster.  It attacks first!"
+    );
+
+    private $orderus_first_attack_luck_narrations = array(
+        "Orderus is luckier.  He attacks first!"
+    );
+
+    private $beast_first_attack_luck_narrations = array(
+        "Beast is luckier.  It attacks first!"
+    );
+
+    private $orderus_attacks_narrations = array(
+        "Orderus attacks...",
+        "One, two!  One, two!  And through and through...",
+        "Orderus' vorpal blade goes snicker-snack!",
+        "Orderus takes a stance and foins with his sword!",
+        "The mighty blade of Orderus swoops at the beast.",
+        "With calm determination, Orderus lunges forward...",
+        "With a spectacular mid-air flip, Orderus swooshes his blade upon the beast."
+    );
+
+    private $beast_attacks_narrations = array(
+        "The wild beast attacks...",
+        "The wild beast snarls and leaps forward with gleaming claws.",
+        "The wild beast bounds to and fro, before lunging forward with bared teeth.",
+        "Growling menacingly, the wild beast stands on its hind feet and raises its paws...",
+        "Preparing to prance, the wild beast rears down for the big win.",
+        "The wild beast leaps into the air with a wide arc, landing with its sharp claws."
     );
 
     private $won_narrations = array(

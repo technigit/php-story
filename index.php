@@ -9,15 +9,19 @@ include_once('classes/Beast.php');
 
 $ui = new UI();
 $narration = new Narration();
-$game = new Game($ui);
+$game = new Game($ui, $narration);
 
 $ui->display($narration->start());
 $game->display_stats();
+$ui->display_blank();
 
 while ($game->is_running) {
     $ui->display($narration->round());
+    $ui->display_blank();
+
     $game->play_round();
     $game->display_stats();
+    $ui->display_blank();
 }
 
 if ($game->winner->is_orderus) {
